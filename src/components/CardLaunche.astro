@@ -8,26 +8,32 @@ interface Props {
 }
 
 const { success, flightNumber, details, id, img } = Astro.props;
-const succesText = success ? 'success' : 'failed';
+const succesText = success ? "success" : "failed";
 ---
 
 <a
   href=`/launch/${id}`
-  class="rounded-lg border shadow-md bg-gray-800 border-gray-700 hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col"
+  class="rounded-lg border h-full shadow-md bg-gray-800 border-gray-700 hover:scale-105 hover:bg-gray-700 hover:border-gray-500 transition flex flex-col"
 >
-<picture class="flex justify-center p-4">
-    <img src={img} alt={`Path for launch ${id}`} class="mb-5 rounded-lg">
-</picture>
+  <picture class="flex justify-center p-4">
+    <img src={img} alt={`Path for launch ${id}`} class="mb-5 rounded-lg" />
+  </picture>
 
-<header class="p-4 flex-grow">
-    <span class={`text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ${success ? "bg-green-400 text-green-900": "bg-red-400 text-red-900"}`}>
-        {succesText}
+  <header class="p-4 flex-grow">
+    <span
+      class={`text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ${success ? "bg-green-400 text-green-900" : "bg-red-400 text-red-900"}`}
+    >
+      {succesText}
     </span>
     <h2 class="my-2 text-2xl font-bold tracking-tight text-white">
-        Flight #{flightNumber}
+      Flight #{flightNumber}
     </h2>
     <p class="mb-4 font-light text-gray-400">
-        {details !== null && details?.length > 100 ? `${details.substring(0, 100)}...` : details}
+      {
+        details !== null && details?.length > 100
+          ? `${details.substring(0, 100)}...`
+          : details
+      }
     </p>
-</header>
+  </header>
 </a>

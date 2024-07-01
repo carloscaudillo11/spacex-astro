@@ -1,5 +1,5 @@
 ---
-import HeaderButton from './HeaderButton.astro';
+import HeaderButton from "./HeaderButton.astro";
 ---
 
 <header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
@@ -16,7 +16,6 @@ import HeaderButton from './HeaderButton.astro';
   >
     <HeaderButton href="/" class="text-white">
       <svg
-        slot="icon"
         width="40"
         height="40"
         viewBox="0 0 24 24"
@@ -35,9 +34,9 @@ import HeaderButton from './HeaderButton.astro';
       </svg>
       Últimos lanzamientos
     </HeaderButton>
+    
     <HeaderButton href="/about" class="text-white">
       <svg
-        slot="icon"
         width="40"
         height="40"
         viewBox="0 0 24 24"
@@ -54,6 +53,7 @@ import HeaderButton from './HeaderButton.astro';
       </svg>
       Sobre el proyecto
     </HeaderButton>
+
     <HeaderButton href="oldest" class="text-white">
       <svg
         width="40"
